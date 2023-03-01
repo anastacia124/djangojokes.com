@@ -24,10 +24,14 @@ class JobApplicationForm(forms.Form):
     start_date = forms.DateField(
         help_text='The earliest date you can start working.'
     )
-    available_days = forms.MultipleChoiceField(
-        choices=DAYS,
-        help_text='Select all days that you can work.'
-    )
+    available_days = forms.TypedMultipleChoiceField(
+  choices=DAYS,
+  coerce=int,
+  help_text='Check all days that you can work.',
+  widget=forms.CheckboxSelectMultiple(
+      attrs={'checked':True}
+  )
+)
     desired_hourly_wage = forms.DecimalField()
     cover_letter = forms.CharField()
     confirmation = forms.BooleanField(
