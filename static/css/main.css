@@ -3,11 +3,11 @@ body {
   }
     
   footer {
-    border-top: 1px solid darkgreen;
+    border-top: 1px solid rgb(229, 235, 229);
   }
   
   header {
-    border-bottom: 1px solid darkgreen;
+    border-bottom: 1px solid rgb(37, 41, 37);
   }
   
   h2 {
@@ -67,4 +67,14 @@ label {
   background-color: gold;
   border-radius: .5em;
   height: 10px;
+}
+
+article {
+  background: white;
+  border: 1px ridge rgb(233, 107, 176);
+  box-sizing: border-box;
+  margin: 1em auto;
+  padding: 1rem;
+  max-width: 75%;
+  text-align: center;
 }

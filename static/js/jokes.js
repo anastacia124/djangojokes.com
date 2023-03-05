@@ -36,3 +36,4 @@ window.addEventListener('load', () => {
         document.getElementById('num-votes').innerHTML = voteText;
       });
   }
+

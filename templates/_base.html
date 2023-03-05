@@ -9,11 +9,11 @@
 <script src="https://kit.fontawesome.com/f804978a2a.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon1.png' %}">
 {% block javascript %}{% endblock %}
-<title>{% block title %}{% endblock %} | Django Jokes</title>
+<title>{% block title %}{% endblock %} | Play2Learn</title>
 </head>
 <body>
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg bg"style="background-color: #d8b9ff ;">
     <a class="navbar-brand" href="{% url 'pages:homepage' %}">
       <img src="{% static 'images/logo1.png' %}" alt="Logo" class="img-fluid"/>
     </a>
@@ -68,7 +68,7 @@
     </div>
   </nav>
 </header>
-<main class="m-4 pb-5">
+<main class="m-4 pb-4">
   {% if messages %}
     <ul>
       {% for message in messages %}
@@ -84,9 +84,31 @@
   {% endif %}
   {% block main %}<h2>Welcome!</h2>{% endblock %}
 </main>
-<footer class="fixed-bottom bg-light row">
+<footer class= " navbar fixed-bottom text-center text-white bg-dark" >
     <div class="col">
-      <div class="float-end m-1 me-2">Copyright &copy; 2023 Django Jokes.</div>
+      <div class="float-end m-1 me-2">Copyright &copy; 2023 Play2Learn
+      <a
+          class="btn btn-link  text-light"
+          href="https://twitter.com/"
+          role="button"
+          data-mdb-ripple-color="light"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          class="btn btn-link  text-light m-1"
+          href="https://www.instagram.com/"
+          role="button"
+          data-mdb-ripple-color="light"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          class="btn btn-link text-light m-1"
+          href="https://www.facebook.com/"
+          role="button"
+          data-mdb-ripple-color="light"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+      </div>
       <nav>
         <ul class="nav">
           <li class="nav-item">
@@ -97,7 +119,7 @@
               <a class="nav-link" href="/admin/">Admin</a>
             </li>
           {% endif %}
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'jobs:app' %}">Contact</a></li>
         </ul>
       </nav>
     </div>
