@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block javascript %}
-<script>
-  const ajaxURL = "{% url 'jokes:ajax-vote' joke.slug %}";
-</script>
-<script src="{% static 'js/jokes.js' %}"></script>
+  <script>
+    const ajaxURL = "{% url 'jokes:ajax-vote' joke.slug %}";
+  </script>
+  <script src="{% static 'js/jokes.js' %}"></script>
 {% endblock %}
 {% block title %}Joke{% endblock %}
 {% block main %}
