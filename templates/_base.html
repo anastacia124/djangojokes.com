@@ -48,6 +48,10 @@
               aria-expanded="false">
               Me
             </a>
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              <button class="btn dropdown-item">Log out</button>
+            </form>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class=" nav-link dropdown-item" href="{% url 'my-account' %}">
                 My Account
