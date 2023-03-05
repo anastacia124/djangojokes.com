@@ -40,36 +40,27 @@
             <a class="nav-link" href="{% url 'account_signup' %}">Sign up</a>
           </li>
         {% else %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'my-account' %}" id="navbarDropdown" 
-              role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Me
-            </a>
-            <form method="post" action="{% url 'account_logout' %}">
-              {% csrf_token %}
-              <button class="btn dropdown-item">Log out</button>
-            </form>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class=" nav-link dropdown-item" href="{% url 'my-account' %}">
-                My Account
-              </a>
-              <a class="dropdown-item"
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my-account' %}">My Account</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link"
               href="{% url 'jokes:creator' user.username %}?order={{ order }}&direction={{ direction }}">
               My Django Jokes
             </a>
-              <div class="dropdown-divider"></div>
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                <button class="btn dropdown-item">Log out</button>
-              </form>
-            </div>
-          </li>
+        </li>
+        <li class="nav-item">
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              <button class="btn nav-item">Log out</button>
+            </form>
+        </li>
         {% endif %}
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" action="{% url 'jokes:list' %}">
         <input class="form-control me-sm-2" type="search"
-        placeholder="Search" aria-label="Search">
+          placeholder="Search" aria-label="Search" name="q"
+          value="{{ request.GET.q }}">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
           Search
         </button>
