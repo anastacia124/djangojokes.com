@@ -30,7 +30,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'jokes:list' %}">Jokes</a>
+          <a class="nav-link" href="{% url 'jokes:list' %}">Game Leaderboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="% url pages/anagram-hunt.html">Anagram Hunt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="% url pages/math-facts.html">Math Facts Practice</a>
         </li>
         {% if not user.is_authenticated %}
           <li class="nav-item">
@@ -46,7 +52,7 @@
         <li class="nav-item">
               <a class="nav-link"
               href="{% url 'jokes:creator' user.username %}?order={{ order }}&direction={{ direction }}">
-              My Django Jokes
+              My Reviews
             </a>
         </li>
         <li class="nav-item">
