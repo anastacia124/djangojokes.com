@@ -28,6 +28,4 @@ A full-stack web application built with Django that allows users to view, submit
 - Add user profiles
 - Implement joke rating system
 - Improve UI/UX design
-- Add REST API for external access
-
-(https://www.djangojokes.com).
+- Add REST API for external 
